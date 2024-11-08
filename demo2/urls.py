@@ -17,16 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from college.views import InstructorUpdateView, StudentsListCreateView, InstructorListCreatView, StudentUpdateView, StudentDeleteView,InstructorDeleteView 
-
+from college.views import StudentsListCreateView
+from college.views import InstructorListCreatView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('students/', StudentsListCreateView.as_view()),
-    path('instructor/',InstructorListCreatView.as_view()),
-    path('students/<int:pk>', StudentUpdateView.as_view()),
-    path('students/<int:pk>/delete', StudentDeleteView.as_view()),
-    path('instructor/<int:pk>/delete', InstructorDeleteView.as_view()),
-    path('instructor/<int:pk>',InstructorUpdateView.as_view())
+    path('instructor/',InstructorListCreatView.as_view())
+
 
 ]
